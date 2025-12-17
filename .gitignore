@@ -32,3 +32,6 @@ submit*.py
 
 ## Bundle logs
 logs/
+
+# io files
+io/
