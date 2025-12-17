@@ -374,8 +374,7 @@ def bundle_file(entry_path: Path, root: Path) -> str:
             out.append(it.rstrip())
         return out
 
-    future_imports = _dedup_keep_order(module_imports_future)
-    future_imports = _dedup_keep_order(entry_future_imports + future_imports)
+    future_imports = _dedup_keep_order(entry_future_imports + module_imports_future)
     other_imports = _dedup_keep_order(module_imports_other)
 
     # 先頭行に shebang があれば、最初の行として保持する。
