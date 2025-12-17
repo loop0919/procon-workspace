@@ -92,7 +92,7 @@ __prows_bundle() {
   "$py" -m isort --profile black "$out" || return $?
   "$py" -m black "$out" || return $?
 
-  if cat "$out" | __lib_copy_to_clipboard; then
+  if __lib_copy_to_clipboard < "$out"; then
     echo "generated: $out (formatted, copied to clipboard)" >&2
     return 0
   fi
