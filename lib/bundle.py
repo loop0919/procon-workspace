@@ -158,6 +158,8 @@ def _toposort_symbols(symbols: list[SymbolDef]) -> list[SymbolDef]:
 
     deps: dict[str, set[str]] = {sid: set() for sid in order}
     indeg: dict[str, int] = {sid: 0 for sid in order}
+    # 逆依存グラフ: rdeps[sid] = sidに依存しているノードの集合
+    rdeps: dict[str, set[str]] = {sid: set() for sid in order}
     for sid in order:
         s = by_id[sid]
         for dep_name in _definition_time_deps(s.node):
@@ -167,6 +169,8 @@ def _toposort_symbols(symbols: list[SymbolDef]) -> list[SymbolDef]:
             if dep_id not in deps[sid]:
                 deps[sid].add(dep_id)
                 indeg[sid] += 1
+                # 逆依存を記録: dep_id -> sid への依存関係がある
+                rdeps[dep_id].add(sid)
 
     ready = [sid for sid in order if indeg[sid] == 0]
     out: list[str] = []
@@ -176,9 +180,8 @@ def _toposort_symbols(symbols: list[SymbolDef]) -> list[SymbolDef]:
         sid = ready.pop(0)
         ready_set.discard(sid)
         out.append(sid)
-        for other in order:
-            if sid not in deps[other]:
-                continue
+        # sidに依存しているノードのみを処理（O(n²) -> O(n+e)）
+        for other in rdeps[sid]:
             deps[other].remove(sid)
             indeg[other] -= 1
             if indeg[other] == 0 and other not in ready_set and other not in out:
