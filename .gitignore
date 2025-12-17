@@ -1,0 +1,34 @@
+## Python
+__pycache__/
+*.py[cod]
+*.pyd
+*.so
+## Virtual environments
+.venv/
+venv/
+ENV/
+env/
+## Tool caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.pytype/
+.pyright/
+## Build artifacts
+build/
+dist/
+*.egg-info/
+.eggs/
+## Coverage
+.coverage
+coverage.xml
+htmlcov/
+## OS
+.DS_Store
+## Generated submission files
+submit.py
+submit*.py
+*.pyz
+
+## Bundle logs
+logs/
