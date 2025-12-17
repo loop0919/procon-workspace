@@ -1,6 +1,6 @@
 class Comb:
     """\
-    nCr % mod を計算する.  
+    nCr % mod を計算する.
     """
 
     _limit: int
@@ -12,7 +12,7 @@ class Comb:
 
     def __init__(self, limit: int = 10**6, mod: int = 998244353) -> None:
         """\
-        nCr % mod を計算するための前計算.  
+        nCr % mod を計算するための前計算.
         計算量 O(limit).
 
         Args:
@@ -39,7 +39,7 @@ class Comb:
         Args:
             n (int): nCr を計算するときの n.
             r (int): nCr を計算するときの r.
-        
+
         Returns:
             nCr % mod の結果.
         """
