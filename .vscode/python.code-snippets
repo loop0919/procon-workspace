@@ -1,0 +1,121 @@
+{
+	"Initialize Python code": {
+        "prefix": "!!ii",
+        "body": [
+            "def solve():",
+            "    $1",
+            "",
+            "",
+            "if __name__ == \"__main__\":",
+            "    solve()",
+            ""
+        ]
+    },
+	"Initialize Python code for multi testcases": {
+        "prefix": "!!mii",
+        "body": [
+            "def solve():",
+            "    $1",
+            "",
+            "",
+            "if __name__ == \"__main__\":",
+            "    T = int(input())",
+            "",
+            "    for _ in range(T):",
+            "        solve()",
+            ""
+        ]
+    },
+	"Input string": {
+        "prefix": "!ss",
+        "body": [
+            "input()"
+        ]
+    },
+    "Input string list without space": {
+        "prefix": "!ls",
+        "body": [
+            "[s for s in input()]"
+        ]
+    },
+    "Input string list with space": {
+        "prefix": "!lss",
+        "body": [
+            "input().split()"
+        ]
+    },
+    "Input integer": {
+        "prefix": "!ii",
+        "body": [
+            "int(input())"
+        ]
+    },
+    "Input multiple integers": {
+        "prefix": "!mi",
+        "body": [
+            "[int(s) for s in input().split()]"
+        ]
+    },
+    "Input integer list": {
+        "prefix": "!li",
+        "body": [
+            "[int(s) for s in input().split()]"
+        ]
+    },
+    "Input multiple integers with decrement": {
+        "prefix": "!mid",
+        "body": [
+            "[int(s) - 1 for s in input().split()]"
+        ]
+    },
+    "Input integer list with decrement": {
+        "prefix": "!lid",
+        "body": [
+            "[int(s) - 1 for s in input().split()]"
+        ]
+    },
+    "Input float": {
+        "prefix": "!ff",
+        "body": [
+            "float(input())"
+        ]
+    },
+    "Input multiple float": {
+        "prefix": "!mf",
+        "body": [
+            "[float(s) for s in input().split()]"
+        ]
+    },
+    "Input float list": {
+        "prefix": "!lf",
+        "body": [
+            "[float(s) for s in input().split()]"
+        ]
+    },
+    "Output": {
+        "prefix": "!pp",
+        "body": [
+            "print($1)"
+        ]
+    },
+	"Output without separate": {
+		"prefix": "!pn",
+		"body": [
+			"print($1, sep=\"\")",
+			"$2"
+		]
+	},
+    "Output with endline": {
+		"prefix": "!pn",
+		"body": [
+			"print($1, sep=\"\\n\")",
+			"$2"
+		]
+	},
+    "Mod 998244353": {
+        "prefix": "!mod",
+        "body": [
+            "MOD = 998244353"
+        ]
+    }
+}
