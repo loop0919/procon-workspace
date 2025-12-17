@@ -10,7 +10,7 @@ class Comb:
     _inv: list[int]
     _facinv: list[int]
 
-    def __init__(self, limit=10**6, mod=998244353):
+    def __init__(self, limit: int = 10**6, mod: int = 998244353) -> None:
         """\
         nCr % mod を計算するための前計算.  
         計算量 O(limit).
